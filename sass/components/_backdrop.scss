@@ -1,0 +1,208 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+    & .modal {
+      transform: translate(50%, -50%) scale(0.1);
+    }
+  }
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  width: 528px;
+  background: var(--main-background-color);
+  border-radius: 4px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
+  0px 1px 1px rgba(0, 0, 0, 0.14),
+  0px 2px 1px rgba(0, 0, 0, 0.2);
+  transform: translate(50%, -50%) scale(1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-icon-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  background: var(--main-background-color);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:focus {
+    fill: var(--secondary-accent-color);
+  }
+}
+
+.contact-form-title {
+  margin-bottom: 12px;
+  @include font(700, 20px, 23px);
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: var(--main-text-color);
+}
+
+.contact-form-wrapper {
+  padding: 40px;
+  text-align: left;
+}
+
+.contact-form-input {
+  width: 100%;
+  height: 38px;
+  padding: 12px 12px 12px 42px;
+  @include font(400, 14px, 16px);
+  letter-spacing: 0.01em;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  box-sizing: border-box;
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:focus,
+  &:hover {
+    border: 1px solid var(--main-accent-color);
+    outline: none;
+  }
+}
+
+.contact-form-input-message {
+  width: 100%;
+  height: 118px;
+  margin-bottom: 20px;
+  padding: 12px 16px;
+  @include font(400, 14px, 16px);
+  letter-spacing: 0.01em;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  box-sizing: border-box;
+  border-radius: 4px;
+  resize: none;
+  outline: none;
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+
+  &:focus,
+  &:hover {
+    border: 1px solid var(--main-accent-color);
+  }
+
+  &::placeholder {
+    @include font(400, 14px, 16px);
+    letter-spacing: 0.01em;
+    color: rgba(117, 117, 117, 0.5);
+  }
+}
+
+.confirmation-wrapper {
+  text-align: center;
+}
+
+.contact-form-confirm {
+  @include font(400, 14px, 24px);
+  letter-spacing: 0.03em;
+  color: var(--secondary-text-color);
+
+  &::before {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 15px;
+    margin-right: 8px;
+    border: 2px solid var(--main-text-color);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+      border-radius 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    .contact-form-checkbox:focus + &,
+    .contact-form-checkbox:hover + & {
+      border: 2px solid var(--main-accent-color);
+      border-radius: 4px;
+    }
+
+    .contact-form-checkbox:checked + & {
+      background-image: url(../images/icon-check.svg);
+      border: 0px;
+    }
+  }
+}
+
+.contact-form-checkbox {
+  border-radius: 4px;
+}
+
+.contact-form-confirm-link {
+  color: var(--main-accent-color);
+}
+
+.contact-form-btn {
+  display: block;
+  width: 200px;
+  height: 50px;
+  margin-top: 30px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 10px 55px;
+  @include font(700, 16px, 30px);
+  letter-spacing: 0.06em;
+  color: var(--main-light-color);
+  background-color: var(--main-accent-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+
+  &:focus,
+  &:hover {
+    background-color: var(--secondary-accent-color);
+  }
+}
+
+.contact-form-type {
+  display: block;
+  margin-top: 12px;
+  margin-bottom: 4px;
+  @include font(400, 12px, 14px);
+  letter-spacing: 0.01em;
+  color: var(--secondary-text-color);
+}
+
+.contact-form-input-wrapper {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.contact-form-icon {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  display: block;
+  transform: translateY(-50%);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  .contact-form-input:focus + &,
+  .contact-form-input:hover + & {
+    fill: var(--main-accent-color);
+  }
+}

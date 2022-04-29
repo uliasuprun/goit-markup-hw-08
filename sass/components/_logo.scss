@@ -1,0 +1,18 @@
+.header__logo_theme_blue,
+.footer__logo_theme_blue     {
+    margin: 0;
+    padding: 0;
+    font-family: Raleway, sans-serif;
+    @include font(bold, 26px, 31px);
+    letter-spacing: 0.03em;
+    color: var(--main-accent-color);
+}
+
+.header__logo_theme_dark {
+    color: var(--logo-dark-color);
+}
+
+.footer__logo_theme_light {
+    margin-bottom: 20px;
+    color: var(--main-light-color);
+}

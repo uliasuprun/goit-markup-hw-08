@@ -1,0 +1,29 @@
+.clients__list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.clients__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 170px;
+    height: 92px;
+    margin-right: 30px;
+    fill: var(--team-social-icons);
+    border: 1px solid var(--team-social-icons);
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+        border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+
+    &:nth-child(6n + 6) {
+        margin-right: 0px;
+    }
+
+    &:hover,
+    &:focus {
+        fill: var(--main-accent-color);
+        border-color: var(--main-accent-color);
+    }
+}
