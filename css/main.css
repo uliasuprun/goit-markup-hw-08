@@ -623,7 +623,7 @@ address {
   max-width: 100%;
   min-height: 400px;
   margin: 0 auto;
-  background-image: linear-gradient(to right, var(--hero-overlay), var(--hero-overlay)), url(/images/hero-bg-img-mbl.jpeg);
+  background-image: linear-gradient(to right, var(--hero-overlay), var(--hero-overlay)), url(../images/hero-bg-img-mbl.jpeg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -631,7 +631,7 @@ address {
 
 @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
   .hero__overlay {
-    background-image: linear-gradient(to right, var(--hero-overlay), var(--hero-overlay)), url(/images/hero-bg-img-mbl@2x.jpeg);
+    background-image: linear-gradient(to right, var(--hero-overlay), var(--hero-overlay)), url(../images/hero-bg-img-mbl@2x.jpeg);
   }
 }
 
@@ -669,13 +669,13 @@ address {
 
 @media screen and (min-width: 768px) {
   .hero__overlay {
-    background-image: linear-gradient(to right, var(--hero-overlay), var(--hero-overlay)), url(/images/hero-bg-img-tblt.jpeg);
+    background-image: linear-gradient(to right, var(--hero-overlay), var(--hero-overlay)), url(../images/hero-bg-img-tblt.jpeg);
   }
 }
 
 @media screen and (min-width: 768px) and (min-device-pixel-ratio: 2), screen and (min-width: 768px) and (min-resolution: 192dpi), screen and (min-width: 768px) and (min-resolution: 2dppx) {
   .hero__overlay {
-    background-image: linear-gradient(to right, var(--hero-overlay), var(--hero-overlay)), url(/images/hero-bg-img-tblt@2x.jpeg);
+    background-image: linear-gradient(to right, var(--hero-overlay), var(--hero-overlay)), url(../images/hero-bg-img-tblt@2x.jpeg);
   }
 }
 
@@ -685,13 +685,13 @@ address {
   }
   .hero__overlay {
     max-width: 1600px;
-    background-image: linear-gradient(to right, var(--hero-overlay), var(--hero-overlay)), url(/images/hero-bg-img.jpeg);
+    background-image: linear-gradient(to right, var(--hero-overlay), var(--hero-overlay)), url(../images/hero-bg-img.jpeg);
   }
 }
 
 @media screen and (min-width: 1200px) and (min-device-pixel-ratio: 2), screen and (min-width: 1200px) and (min-resolution: 192dpi), screen and (min-width: 1200px) and (min-resolution: 2dppx) {
   .hero__overlay {
-    background-image: linear-gradient(to right, var(--hero-overlay), var(--hero-overlay)), url(/images/hero-bg-img@2x.jpeg);
+    background-image: linear-gradient(to right, var(--hero-overlay), var(--hero-overlay)), url(../images/hero-bg-img@2x.jpeg);
   }
 }
 
