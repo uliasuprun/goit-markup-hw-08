@@ -1,22 +1,30 @@
 .hero {
-    padding: 200px 0;
+    padding: 118px 0;
     text-align: center;
     background: var(--hero-footer-background);
 }
-
 .hero__overlay {
-    max-width: 1600px;
-    min-height: 600px;
+    max-width: 100%;
+    min-height: 400px;
     margin: 0 auto;
     background-image: linear-gradient(to right, var(--hero-overlay), var(--hero-overlay)),
-        url(../images/hero-bg-img.jpeg);
+        url(/images/hero-bg-img-mbl.jpeg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
 }
+@media 
+(min-device-pixel-ratio: 2), 
+(min-resolution: 192dpi),
+(min-resolution: 2dppx) {
+    .hero__overlay { 
+    background-image: linear-gradient(to right, var(--hero-overlay), var(--hero-overlay)),
+    url(/images/hero-bg-img-mbl@2x.jpeg);
+    }
+}
 .hero__title {
     margin-bottom: 30px;
-    @include font(900, 44px, 60px);
+    @include font(900, 26px, 42px);
     letter-spacing: 0.06em;
     text-transform: uppercase;
     color: var(--main-light-color);
@@ -38,5 +46,44 @@
     &:hover,
     &:focus {
         background-color: var(--secondary-accent-color);
+    }
+}
+
+@media screen and (min-width: 768px) {
+.hero__overlay {
+    background-image: linear-gradient(to right, var(--hero-overlay), var(--hero-overlay)),
+        url(/images/hero-bg-img-tblt.jpeg);
+}
+
+@media (min-device-pixel-ratio: 2),
+(min-resolution: 192dpi),
+(min-resolution: 2dppx) {
+    .hero__overlay {
+        background-image: linear-gradient(to right, var(--hero-overlay), var(--hero-overlay)),
+            url(/images/hero-bg-img-tblt@2x.jpeg);
+    }
+}
+}
+
+
+@media screen and (min-width: 1200px) {
+.hero {
+    padding: 200px 0;
+}
+.hero__overlay {
+    max-width: 1600px;
+    background-image: linear-gradient(to right, var(--hero-overlay), var(--hero-overlay)),
+    url(/images/hero-bg-img.jpeg);
+}
+@media (min-device-pixel-ratio: 2),
+(min-resolution: 192dpi),
+(min-resolution: 2dppx) {
+    .hero__overlay {
+        background-image: linear-gradient(to right, var(--hero-overlay), var(--hero-overlay)),
+            url(/images/hero-bg-img@2x.jpeg);
+    }
+}
+    .hero__title {
+        @include font(900, 44px, 60px);
     }
 }

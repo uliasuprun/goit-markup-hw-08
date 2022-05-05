@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
     <title>Студия</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -19,11 +19,16 @@
   </head>
   <body>
     <header class="header">
-      <div class="container">
+      <div class="container header__container">
         <nav class="header__nav">
           <a class="header__logo header__logo_theme_blue" href="./index.html" lang="en"
             >Web<span class="header__logo_theme_dark">Studio</span></a
           >
+          <button class="mobile-menu-btn" type="button" data-menu-open>
+            <svg class="mobile-menu-btn__icon" width="40" height="40">
+              <use href="./images/sprite.svg#burger-menu-icon"></use>
+            </svg>
+          </button>
           <ul class="header__nav-list">
             <li class="header__nav-item">
               <a href="./index.html" class="header__nav-link current">Студия</a>
@@ -36,24 +41,76 @@
             </li>
           </ul>
         </nav>
-        <ul class="header__contacts header__nav-list">
-          <li class="header__contacts-list">
-            <a class="header__contacts-item" href="mailto:info@devstudio.com">
-              <svg class="header__contacts-icon-email" width="16" height="12">
-                <use href="./images/sprite.svg#icon-email"></use>
-              </svg>
-              info@devstudio.com</a
-            >
-          </li>
-          <li class="header__contacts-list">
-            <a class="header__contacts-item" href="tel:+380961111111">
-              <svg class="header__contacts-icon-tel" width="10" height="16">
-                <use href="./images/sprite.svg#icon-smartphone"></use>
-              </svg>
-              +38 096 111 11 11</a
-            >
-          </li>
-        </ul>
+
+        <div class="header__contacts-wrapper">
+          <ul class="header__contacts header__nav-list">
+            <li class="header__contacts-list">
+              <a class="header__contacts-item mail" href="mailto:info@devstudio.com">
+                <svg class="header__contacts-icon-email" width="16" height="12">
+                  <use href="./images/sprite.svg#icon-email"></use>
+                </svg>
+                info@devstudio.com</a
+              >
+            </li>
+            <li class="header__contacts-list">
+              <a class="header__contacts-item" href="tel:+380961111111">
+                <svg class="header__contacts-icon-tel" width="10" height="16">
+                  <use href="./images/sprite.svg#icon-smartphone"></use>
+                </svg>
+                +38 096 111 11 11</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mobile-menu is-open" data-menu>
+        <div class="container mobile-menu__container">
+          <button class="mobile-menu__close-btn" type="button" data-menu-close>
+            <svg class="mobile-menu__close-icon" width="40" height="40">
+              <use href="./images/sprite.svg#icon-close-mobile"></use>
+            </svg>
+          </button>
+
+          <ul class="mobile-menu__nav-list">
+            <li class="mobile-menu__nav-item">
+              <a href="./index.html" class="mobile-menu__nav-link current">Студия</a>
+            </li>
+            <li class="mobile-menu__nav-item">
+              <a href="./portfolio.html" class="mobile-menu__nav-link">Портфолио</a>
+            </li>
+            <li class="mobile-menu__nav-item">
+              <a href="" class="mobile-menu__nav-link">Контакты</a>
+            </li>
+          </ul>
+          <div class="mobile-menu__contacts-social">
+            <ul class="mobile-menu__contacts">
+              <li class="mobile-menu__contacts-list tel">
+                <a class="mobile-menu__contacts-tel" href="tel:+380961111111"> +38 096 111 11 11</a>
+              </li>
+              <li class="mobile-menu__contacts-list">
+                <a class="mobile-menu__contacts-mail" href="mailto:info@devstudio.com">
+                  info@devstudio.com</a
+                >
+              </li>
+            </ul>
+
+            <ul class="mobile-menu__social">
+              <li class="mobile-menu__social-list">
+                <a href="" class="mobile-menu__social-item">Instagram</a>
+              </li>
+              <li class="mobile-menu__social-list">
+                <a href="" class="mobile-menu__social-item">Twitter</a>
+              </li>
+              <li class="mobile-menu__social-list">
+                <a href="" class="mobile-menu__social-item">Facebook</a>
+              </li>
+              <li class="mobile-menu__social-list">
+                <a href="" class="mobile-menu__social-item">LinkedIn</a>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </header>
     <main>
@@ -72,47 +129,52 @@
               </button>
               <form class="contact-form-wrapper">
                 <b class="contact-form-title">Оставьте свои данные, мы вам перезвоним</b>
-                <label class="contact-form-type"
-                  >Имя
-                  <span class="contact-form-input-wrapper">
-                    <input
-                      type="text"
-                      name="user_name"
-                      class="contact-form-input"
-                      required
-                      minlength="2"
-                      pattern="^[а-яА-Яа-яА-Яa-zA-Z]+\s[а-яА-Яа-яА-Яa-zA-Z]+$"
-                    />
-                    <svg class="contact-form-icon" width="18" height="18">
-                      <use href="./images/sprite.svg#icon-person-black-18dp"></use>
-                    </svg>
-                  </span>
-                </label>
-                <label class="contact-form-type"
-                  >Телефон
-                  <span class="contact-form-input-wrapper">
-                    <input
-                      type="tel"
-                      name="user_phone"
-                      class="contact-form-input"
-                      required
-                      pattern="[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}"
-                      title="066-xxx-xx-xx"
-                    />
-                    <svg class="contact-form-icon" width="18" height="18">
-                      <use href="./images/sprite.svg#icon-phone-black-18dp"></use>
-                    </svg>
-                  </span>
-                </label>
-                <label class="contact-form-type"
-                  >Почта
-                  <span class="contact-form-input-wrapper">
-                    <input type="email" name="user_email" class="contact-form-input" required />
-                    <svg class="contact-form-icon" width="18" height="18">
-                      <use href="./images/sprite.svg#icon-email-black-18dp"></use>
-                    </svg>
-                  </span>
-                </label>
+                <label for="user-name" class="contact-form-type">Имя </label>
+                <span class="contact-form-input-wrapper">
+                  <input
+                    type="text"
+                    name="user_name"
+                    class="contact-form-input"
+                    required
+                    id="user-name"
+                    minlength="2"
+                    pattern="^[а-яА-Яа-яА-Яa-zA-Z]+\s[а-яА-Яа-яА-Яa-zA-Z]+$"
+                  />
+                  <svg class="contact-form-icon" width="18" height="18">
+                    <use href="./images/sprite.svg#icon-person-black-18dp"></use>
+                  </svg>
+                </span>
+
+                <label for="user-phone" class="contact-form-type">Телефон </label>
+                <span class="contact-form-input-wrapper">
+                  <input
+                    type="tel"
+                    name="user_phone"
+                    class="contact-form-input"
+                    required
+                    id="user-phone"
+                    pattern="[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}"
+                    title="066-xxx-xx-xx"
+                  />
+                  <svg class="contact-form-icon" width="18" height="18">
+                    <use href="./images/sprite.svg#icon-phone-black-18dp"></use>
+                  </svg>
+                </span>
+
+                <label for="user-mail" class="contact-form-type">Почта </label>
+                <span class="contact-form-input-wrapper">
+                  <input
+                    type="email"
+                    name="user_email"
+                    class="contact-form-input"
+                    id="user-mail"
+                    required
+                  />
+                  <svg class="contact-form-icon" width="18" height="18">
+                    <use href="./images/sprite.svg#icon-email-black-18dp"></use>
+                  </svg>
+                </span>
+
                 <label for="user-confirm" class="contact-form-type">Комментарий</label>
                 <textarea
                   name="user_message"
@@ -132,7 +194,6 @@
                     <a href="" class="contact-form-confirm-link">Условия договора</a></label
                   >
                 </span>
-
                 <button type="submit" class="contact-form-btn">Отправить</button>
               </form>
             </div>
@@ -196,34 +257,70 @@
           <ul class="our-work__list">
             <li class="our-work__item">
               <div class="our-work__img-wrapper">
-                <img
-                  src="./images/about-img-1.jpeg"
-                  alt="Декстопные приложения"
-                  width="370"
-                  height="294"
-                />
+                <picture>
+                  <source
+                    srcset="./images/about-img-1.webp 1x, ./images/about-img-1@2x.webp 2x"
+                    media="(min-width: 1200px)"
+                    type="image/webp"
+                  />
+                  <source
+                    srcset="./images/about-img-1.jpeg 1x, ./images/about-img-1@2x.jpeg 2x"
+                    media="(min-width: 1200px)"
+                  />
+
+                  <img
+                    src="./images/about-img-1.jpeg"
+                    alt="Декстопные приложения"
+                    width="370"
+                    height="294"
+                  />
+                </picture>
                 <p class="our-work__img-wrapper-item">Десктопные приложения</p>
               </div>
             </li>
             <li class="our-work__item">
               <div class="our-work__img-wrapper">
-                <img
-                  src="./images/about-img-2.jpeg"
-                  alt="Мобильные приложения"
-                  width="370"
-                  height="294"
-                />
+                <picture>
+                  <source
+                    srcset="./images/about-img-2.webp 1x, ./images/about-img-2@2x.webp 2x"
+                    media="(min-width: 1200px)"
+                    type="image/webp"
+                  />
+                  <source
+                    srcset="./images/about-img-2.jpeg 1x, ./images/about-img-2@2x.jpeg 2x"
+                    media="(min-width: 1200px)"
+                  />
+
+                  <img
+                    src="./images/about-img-2.jpeg"
+                    alt="Мобильные приложения"
+                    width="370"
+                    height="294"
+                  />
+                </picture>
                 <p class="our-work__img-wrapper-item">Мобильные приложения</p>
               </div>
             </li>
             <li class="our-work__item">
               <div class="our-work__img-wrapper">
-                <img
-                  src="./images/about-img-3.jpeg"
-                  alt="Дизайнерские решения"
-                  width="370"
-                  height="294"
-                />
+                <picture>
+                  <source
+                    srcset="./images/about-img-3.webp 1x, ./images/about-img-3@2x.webp 2x"
+                    media="(min-width: 1200px)"
+                    type="image/webp"
+                  />
+                  <source
+                    srcset="./images/about-img-3.jpeg 1x, ./images/about-img-3@2x.jpeg 2x"
+                    media="(min-width: 1200px)"
+                  />
+
+                  <img
+                    src="./images/about-img-3.jpeg"
+                    alt="Дизайнерские решения"
+                    width="370"
+                    height="294"
+                  />
+                </picture>
                 <p class="our-work__img-wrapper-item">Дизайнерские решения</p>
               </div>
             </li>
@@ -235,7 +332,42 @@
           <h2 class="section-title">Наша команда</h2>
           <ul class="team__list">
             <li class="team__card team__card-item">
-              <img src="./images/team-img-1.jpeg" alt="Игорь Демьяненко" width="270" height="260" />
+              <picture>
+                <source
+                  srcset="./images/team-img-1.webp 1x, ./images/team-img-1@2x.webp 2x"
+                  media="(min-width: 1200px)"
+                  type="image/webp"
+                />
+                <source
+                  srcset="./images/team-img-1.jpeg 1x, ./images/team-img-1@2x.jpeg 2x"
+                  media="(min-width: 1200px)"
+                />
+                <source
+                  srcset="./images/team-img-1-tblt.webp 1x, ./images/team-img-1-tblt@2x.webp 2x"
+                  media="(min-width: 768px)"
+                  type="image/webp"
+                />
+                <source
+                  srcset="./images/team-img-1-tblt.jpeg 1x, ./images/team-img-1-tblt@2x.jpeg 2x"
+                  media="(min-width: 768px)"
+                />
+                <source
+                  srcset="./images/team-img-1-mbl.webp 1x, ./images/team-img-1-mbl@2x.webp 2x"
+                  media="(max-width: 767px)"
+                  type="image/webp"
+                />
+                <source
+                  srcset="./images/team-img-1-mbl.jpeg 1x, ./images/team-img-1-mbl@2x.jpeg 2x"
+                  media="(max-width: 767px)"
+                />
+                <img
+                  src="./images/team-img-1.jpeg"
+                  alt="Игорь Демьяненко"
+                  width="270"
+                  height="260"
+                  class="team__img"
+                />
+              </picture>
               <div class="team__wrapper">
                 <h3 class="team__item-title">Игорь Демьяненко</h3>
                 <p class="team__item-description" lang="en">Product Designer</p>
@@ -272,7 +404,43 @@
               </div>
             </li>
             <li class="team__card team__card-item">
-              <img src="./images/team-img-2.jpeg" alt="Ольга Репина" width="270" height="260" />
+              <picture>
+                <source
+                  srcset="./images/team-img-2.webp 1x, ./images/team-img-2@2x.webp 2x"
+                  media="(min-width: 1200px)"
+                  type="image/webp"
+                />
+                <source
+                  srcset="./images/team-img-2.jpeg 1x, ./images/team-img-2@2x.jpeg 2x"
+                  media="(min-width: 1200px)"
+                />
+                <source
+                  srcset="./images/team-img-2-tblt.webp 1x, ./images/team-img-2-tblt@2x.webp 2x"
+                  media="(min-width: 768px)"
+                  type="image/webp"
+                />
+                <source
+                  srcset="./images/team-img-2-tblt.jpeg 1x, ./images/team-img-2-tblt@2x.jpeg 2x"
+                  media="(min-width: 768px)"
+                />
+                <source
+                  srcset="./images/team-img-2-mbl.webp 1x, ./images/team-img-2-mbl@2x.webp 2x"
+                  media="(max-width: 767px)"
+                  type="image/webp"
+                />
+                <source
+                  srcset="./images/team-img-2-mbl.jpeg 1x, ./images/team-img-2-mbl@2x.jpeg 2x"
+                  media="(max-width: 767px)"
+                />
+                <img
+                  src="./images/team-img-2.jpeg"
+                  alt="Ольга Репина"
+                  width="270"
+                  height="260"
+                  class="team__img"
+                />
+              </picture>
+
               <div class="team__wrapper">
                 <h3 class="team__item-title">Ольга Репина</h3>
                 <p class="team__item-description" lang="en">Frontend Developer</p>
@@ -309,7 +477,43 @@
               </div>
             </li>
             <li class="team__card team__card-item">
-              <img src="./images/team-img-3.jpeg" alt="Николай Тарасов" width="270" height="260" />
+              <picture>
+                <source
+                  srcset="./images/team-img-3.webp 1x, ./images/team-img-3@2x.webp 2x"
+                  media="(min-width: 1200px)"
+                  type="image/webp"
+                />
+                <source
+                  srcset="./images/team-img-3.jpeg 1x, ./images/team-img-3@2x.jpeg 2x"
+                  media="(min-width: 1200px)"
+                />
+                <source
+                  srcset="./images/team-img-3-tblt.webp 1x, ./images/team-img-3-tblt@2x.webp 2x"
+                  media="(min-width: 768px)"
+                  type="image/webp"
+                />
+                <source
+                  srcset="./images/team-img-3-tblt.jpeg 1x, ./images/team-img-3-tblt@2x.jpeg 2x"
+                  media="(min-width: 768px)"
+                />
+                <source
+                  srcset="./images/team-img-3-mbl.webp 1x, ./images/team-img-3-mbl@2x.webp 2x"
+                  media="(max-width: 767px)"
+                  type="image/webp"
+                />
+                <source
+                  srcset="./images/team-img-3-mbl.jpeg 1x, ./images/team-img-3-mbl@2x.jpeg 2x"
+                  media="(max-width: 767px)"
+                />
+                <img
+                  src="./images/team-img-3.jpeg"
+                  alt="Николай Тарасов"
+                  width="270"
+                  height="260"
+                  class="team__img"
+                />
+              </picture>
+
               <div class="team__wrapper">
                 <h3 class="team__item-title">Николай Тарасов</h3>
                 <p class="team__item-description" lang="en">Marketing</p>
@@ -346,7 +550,43 @@
               </div>
             </li>
             <li class="team__card team__card-item">
-              <img src="./images/team-img-4.jpeg" alt="Михаил Ермаков" width="270" height="260" />
+              <picture>
+                <source
+                  srcset="./images/team-img-4.webp 1x, ./images/team-img-4@2x.webp 2x"
+                  media="(min-width: 1200px)"
+                  type="image/webp"
+                />
+                <source
+                  srcset="./images/team-img-4.jpeg 1x, ./images/team-img-4@2x.jpeg 2x"
+                  media="(min-width: 1200px)"
+                />
+                <source
+                  srcset="./images/team-img-4-tblt.webp 1x, ./images/team-img-4-tblt@2x.webp 2x"
+                  media="(min-width: 768px)"
+                  type="image/webp"
+                />
+                <source
+                  srcset="./images/team-img-4-tblt.jpeg 1x, ./images/team-img-4-tblt@2x.jpeg 2x"
+                  media="(min-width: 768px)"
+                />
+                <source
+                  srcset="./images/team-img-4-mbl.webp 1x, ./images/team-img-4-mbl@2x.webp 2x"
+                  media="(max-width: 767px)"
+                  type="image/webp"
+                />
+                <source
+                  srcset="./images/team-img-4-mbl.jpeg 1x, ./images/team-img-4-mbl@2x.jpeg 2x"
+                  media="(max-width: 767px)"
+                />
+                <img
+                  src="./images/team-img-4.jpeg"
+                  alt="Михаил Ермаков"
+                  width="270"
+                  height="260"
+                  class="team__img"
+                />
+              </picture>
+
               <div class="team__wrapper">
                 <h3 class="team__item-title">Михаил Ермаков</h3>
                 <p class="team__item-description" lang="en">UI Designer</p>
@@ -476,6 +716,7 @@
             </li>
           </ul>
         </div>
+
         <div class="footer__contact-form">
           <p class="footer__section-title">Подпишитесь на рассылку</p>
           <form class="footer__contact-form-wrapper">
@@ -498,5 +739,6 @@
       </div>
     </footer>
     <script src="./js/modal.js"></script>
+    <script src="./js/menu.js"></script>
   </body>
 </html>

@@ -1,38 +1,15 @@
 .features__section {
-    padding-top: 94px;
+    padding-top: 60px;
     padding-bottom: 0;
 }
-
 .features__list {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.features__list .features__item {
-    width: 270px;
-    &:not(:last-child) {
-        margin-right: 30px;
-    }
-}
-
-.features__item .features__icon {
-    width: 270px;
-    margin-bottom: 30px;
-    padding-top: 25px;
-    padding-bottom: 25px;
-    background-color: var(--portfolio-buttons-color);
-    border-radius: 4px;
-}
-
-.features__icon .features__icon-item {
-    width: 270px;
-    margin: 0 auto;
+    padding-bottom: 60px;
 }
 
 .features__title {
     margin-top: 0;
     margin-bottom: 10px;
-    @include font(bold, 14px, 16px);
+    @include font(700, 14px, 16px);
     letter-spacing: 0.03em;
     text-transform: uppercase;
     color: var(--main-text-color);
@@ -44,4 +21,75 @@
     @include font(400, 14px, 24px);
     letter-spacing: 0.03em;
     color: var(--secondary-text-color);
+}
+.features__item .features__icon {
+    width: 100%;
+    margin-bottom: 30px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    background-color: var(--portfolio-buttons-color);
+    border-radius: 4px;
+}
+
+.features__icon .features__icon-item {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.features__list .features__item:not(:last-child) {
+        margin-bottom: 30px;
+    }
+.section-title {
+    margin-top: 0;
+    margin-bottom: 30px;
+    @include font(700, 28px, 33px);
+    letter-spacing: 0.03em;
+    text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+.features__item {
+    width: 354px;
+}
+.features__list {
+    display: flex;
+    flex-wrap: wrap;
+    & .features__item:not(:last-child) {
+        margin-bottom: 0px;
+    }
+}
+.features__item:nth-child(2n) {
+    margin-left: 30px;
+}
+.features__item:nth-child(-1n + 2) {
+margin-bottom: 30px;
+}
+}
+@media screen and (min-width: 1200px) {
+.features__section {
+    padding-top: 94px;
+}
+.features__item:nth-child(2n) {
+    margin-left: 0px;
+}
+
+.features__item:nth-child(-1n + 2) {
+    margin-bottom: 0px;
+}
+.features__item .features__icon {
+    width: 270px;
+}
+.features__icon .features__icon-item {
+    width: 270px;
+}
+.features__list .features__item {
+    width: 270px;
+    &:not(:last-child) {
+        margin-right: 30px;
+    }
+}
+.section-title {
+    margin-bottom: 50px;
+    @include font(700, 36px, 42px);
+}
 }
