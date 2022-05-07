@@ -8,6 +8,9 @@
     align-items: center;
     text-align: center;
 }
+.footer__address-section {
+    margin-bottom: 60px;
+}
 .footer__address {
     margin-top: 20px;
     @include font(400, 14px, 24px);
@@ -28,7 +31,6 @@
     }
 }
 .footer__section-title {
-    margin-top: 60px;
     margin-bottom: 20px;
     @include font(700, 14px, 16px);
     letter-spacing: 0.03em;
@@ -45,6 +47,9 @@
     & :not(:last-child) {
         margin-right: 10px;
     }
+}
+.footer__social-section {
+    margin-bottom: 60px;
 }
 .footer__social-item .footer__social-link {
     position: relative;
@@ -115,13 +120,14 @@
 .footer__section {
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
+    align-items: baseline;
     text-align: center;
     flex-wrap: wrap;
     justify-content: center;
 }
 .footer__social-section {
     margin-left: 165px;
+    margin-bottom: 0;
 }
 .footer__social-section .footer__section-title{
     margin-top: 0;
@@ -136,11 +142,11 @@
     text-align: left;
     flex-wrap: nowrap;
 }
+.footer__address-section {
+    margin-bottom: 0;
+}
 .footer__contacts-list {
     margin-top: 9px;
-}
-.footer__section-title {
-    margin-top: 0;
 }
 .footer__contact-form-news {
     width: 358px;

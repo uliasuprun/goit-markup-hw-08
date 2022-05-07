@@ -29,7 +29,7 @@
               <use href="./images/sprite.svg#burger-menu-icon"></use>
             </svg>
           </button>
-          <ul class="header__nav-list">
+          <ul class="header__nav-list header__nav-wrapper">
             <li class="header__nav-item">
               <a href="./index.html" class="header__nav-link current">Студия</a>
             </li>
@@ -42,29 +42,27 @@
           </ul>
         </nav>
 
-        <div class="header__contacts-wrapper">
-          <ul class="header__contacts header__nav-list">
-            <li class="header__contacts-list">
-              <a class="header__contacts-item mail" href="mailto:info@devstudio.com">
-                <svg class="header__contacts-icon-email" width="16" height="12">
-                  <use href="./images/sprite.svg#icon-email"></use>
-                </svg>
-                info@devstudio.com</a
-              >
-            </li>
-            <li class="header__contacts-list">
-              <a class="header__contacts-item" href="tel:+380961111111">
-                <svg class="header__contacts-icon-tel" width="10" height="16">
-                  <use href="./images/sprite.svg#icon-smartphone"></use>
-                </svg>
-                +38 096 111 11 11</a
-              >
-            </li>
-          </ul>
-        </div>
+        <ul class="header__contacts header__nav-list">
+          <li class="header__contacts-list">
+            <a class="header__contacts-item mail" href="mailto:info@devstudio.com">
+              <svg class="header__contacts-icon-email" width="16" height="12">
+                <use href="./images/sprite.svg#icon-email"></use>
+              </svg>
+              info@devstudio.com</a
+            >
+          </li>
+          <li class="header__contacts-list">
+            <a class="header__contacts-item" href="tel:+380961111111">
+              <svg class="header__contacts-icon-tel" width="10" height="16">
+                <use href="./images/sprite.svg#icon-smartphone"></use>
+              </svg>
+              +38 096 111 11 11</a
+            >
+          </li>
+        </ul>
       </div>
 
-      <div class="mobile-menu is-open" data-menu>
+      <div class="mobile-menu" data-menu>
         <div class="container mobile-menu__container">
           <button class="mobile-menu__close-btn" type="button" data-menu-close>
             <svg class="mobile-menu__close-icon" width="40" height="40">
@@ -190,7 +188,7 @@
                     class="contact-form-checkbox visually-hidden"
                   />
                   <label for="user-confirm" class="contact-form-confirm">
-                    Соглашаюсь с рассылкой и принимаю
+                    Соглашаюсь с рассылкой и принимаю&nbsp;
                     <a href="" class="contact-form-confirm-link">Условия договора</a></label
                   >
                 </span>
